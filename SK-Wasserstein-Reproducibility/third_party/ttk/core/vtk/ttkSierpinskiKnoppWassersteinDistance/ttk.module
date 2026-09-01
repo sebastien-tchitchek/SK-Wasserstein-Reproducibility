@@ -1,0 +1,10 @@
+NAME
+  ttkSierpinskiKnoppWassersteinDistance
+SOURCES
+  ttkSierpinskiKnoppWassersteinDistance.cpp
+HEADERS
+  ttkSierpinskiKnoppWassersteinDistance.h
+DEPENDS
+  sierpinskiKnoppWassersteinDistance
+  ttkAlgorithm
+  ttkPersistenceDiagram

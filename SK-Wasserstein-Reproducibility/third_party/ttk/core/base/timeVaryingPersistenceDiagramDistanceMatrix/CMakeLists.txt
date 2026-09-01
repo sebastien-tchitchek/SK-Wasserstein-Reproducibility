@@ -1,0 +1,23 @@
+ttk_add_base_library(timeVaryingPersistenceDiagramDistanceMatrix
+  SOURCES
+    TimeVaryingPersistenceDiagramDistanceMatrix.cpp
+    DTWDistance.cpp
+    FrechetDistance.cpp
+    CGEDDistanceMatrix.cpp
+    TWEDDistanceParallel.cpp
+    L2.cpp
+    HilbertWasserstein.cpp
+  HEADERS
+    TimeVaryingPersistenceDiagramDistanceMatrix.h
+    DTWDistance.h
+    FrechetDistance.h
+    CGEDDistanceMatrix.h
+    TWEDDistanceParallel.h
+    L2.h
+    HilbertWasserstein.h
+  DEPENDS
+    common
+    persistenceDiagramAuction
+    persistenceDiagramClustering
+    persistenceDiagramDistanceMatrix
+  )

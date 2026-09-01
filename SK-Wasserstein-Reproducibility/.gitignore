@@ -1,0 +1,4 @@
+/build/
+/third_party/ttk-paraview/
+**/__pycache__/
+*.pyc

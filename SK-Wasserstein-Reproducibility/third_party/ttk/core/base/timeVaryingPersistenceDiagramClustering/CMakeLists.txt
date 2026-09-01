@@ -1,0 +1,18 @@
+ttk_add_base_library(timeVaryingPersistenceDiagramClustering
+  SOURCES
+    TimeVaryingPersistenceDiagramClustering.cpp
+    CGEDDistance.cpp
+    CGEDDistanceWithBeta.cpp
+  HEADERS
+    TimeVaryingPersistenceDiagramClustering.h
+    CGEDDistance.h
+    CGEDDistanceWithBeta.h
+  DEPENDS
+    common
+    persistenceDiagramAuction
+    persistenceDiagramClustering
+    scalarFieldSmoother
+    explicitTriangulation
+    persistenceDiagramDistanceMatrix
+    dimensionReduction
+  )

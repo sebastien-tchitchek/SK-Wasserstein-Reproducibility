@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="ttkSierpinskiKnoppWassersteinDistance"
+                 class="ttkSierpinskiKnoppWassersteinDistance"
+                 label="TTK Sierpinski-Knopp Projection">
+      <Documentation>
+        Projects two normalized persistence diagrams onto the unit interval with
+        the finite-level Sierpinski-Knopp selector. The output contains one point
+        for each off-diagonal atom and one point for its diagonal projection.
+        The filter accepts either two vtkUnstructuredGrid diagrams on two input
+        ports or one vtkMultiBlockDataSet containing at least two diagrams on the
+        first input port.
+      </Documentation>
+
+      <InputProperty name="InputDiagram0"
+                     command="SetInputConnection"
+                     port_index="0">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources" />
+          <Group name="filters" />
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkUnstructuredGrid" />
+          <DataType value="vtkMultiBlockDataSet" />
+        </DataTypeDomain>
+        <Documentation>
+          First normalized persistence diagram, or a multiblock containing at
+          least two persistence diagrams.
+        </Documentation>
+      </InputProperty>
+
+      <InputProperty name="InputDiagram1"
+                     command="SetInputConnection"
+                     port_index="1">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources" />
+          <Group name="filters" />
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkUnstructuredGrid" />
+          <DataType value="vtkMultiBlockDataSet" />
+        </DataTypeDomain>
+        <Documentation>
+          Second normalized persistence diagram. This input is optional if the
+          first input is a multiblock containing at least two diagrams.
+        </Documentation>
+      </InputProperty>
+
+      <IntVectorProperty name="L"
+                         label="SK Level"
+                         command="SetL"
+                         number_of_elements="1"
+                         default_values="30">
+        <IntRangeDomain name="range" min="0" max="50" />
+        <Documentation>
+          Finite refinement level used to approximate the SK first-hit selector.
+        </Documentation>
+      </IntVectorProperty>
+
+      <IntVectorProperty name="AddLineSegment"
+                         label="Add Unit Segment"
+                         command="SetAddLineSegment"
+                         number_of_elements="1"
+                         default_values="1">
+        <BooleanDomain name="bool" />
+        <Documentation>
+          Whether to add the segment [0,1] as a line cell in the output.
+        </Documentation>
+      </IntVectorProperty>
+
+      <StringVectorProperty name="OutputArrayPrefix"
+                            label="Output Array Prefix"
+                            command="SetOutputArrayPrefix"
+                            number_of_elements="1"
+                            default_values="SK">
+        <Documentation>
+          Prefix used for the output point-data arrays.
+        </Documentation>
+      </StringVectorProperty>
+
+      <Hints>
+        <ShowInMenu category="TTK" />
+      </Hints>
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

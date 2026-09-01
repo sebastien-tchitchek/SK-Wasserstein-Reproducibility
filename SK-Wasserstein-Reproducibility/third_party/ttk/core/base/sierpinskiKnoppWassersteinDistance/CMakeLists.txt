@@ -1,0 +1,9 @@
+ttk_add_base_library(sierpinskiKnoppWassersteinDistance
+  SOURCES
+    SierpinskiKnoppWassersteinDistance.cpp
+  HEADERS
+    SierpinskiKnoppWassersteinDistance.h
+  DEPENDS
+    triangulation
+    persistenceDiagram
+)

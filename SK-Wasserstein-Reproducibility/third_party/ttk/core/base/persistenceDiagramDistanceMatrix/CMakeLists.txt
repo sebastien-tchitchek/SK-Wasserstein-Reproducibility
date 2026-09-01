@@ -1,0 +1,11 @@
+ttk_add_base_library(persistenceDiagramDistanceMatrix
+  SOURCES
+    PersistenceDiagramDistanceMatrix.cpp
+    HilbertWasserstein.cpp
+  HEADERS
+    PersistenceDiagramDistanceMatrix.h
+    HilbertWasserstein.h
+  DEPENDS
+    common
+    persistenceDiagramAuction
+  )
